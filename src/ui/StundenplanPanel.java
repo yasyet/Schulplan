@@ -40,7 +40,7 @@ public class StundenplanPanel extends JPanel {
 
         for (String day : days) {
             JLabel label = new JLabel(day, SwingConstants.CENTER);
-            label.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+            label.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
             header.add(label);
         }
 
@@ -81,8 +81,8 @@ public class StundenplanPanel extends JPanel {
         JLabel leftLabel = new JLabel();
         if (!hour.isBreak()) {
             leftLabel.setText(hour.getLabel());
+            leftLabel.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
         }
-        leftLabel.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 
         if (hour.isBreak()) {
             leftLabel.setOpaque(true);
@@ -94,13 +94,12 @@ public class StundenplanPanel extends JPanel {
             JComponent cell;
             if (hour.isBreak()) {
                 JLabel pauseLabel = new JLabel("", SwingConstants.CENTER);
-                pauseLabel.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
                 pauseLabel.setOpaque(true);
 
                 cell = pauseLabel;
             } else {
                 JButton cellButton = new JButton();
-                cellButton.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+                cellButton.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 
                 cell = cellButton;
             }
